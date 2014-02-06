@@ -9,7 +9,16 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
+	$('a.friendName').click(replaceName);
 	console.log("Javascript connected!");
+}
+
+function replaceName(e){
+	e.preventDefault();
+	var oldName = $(this).text();
+	var newName = anagrammedName(oldName);
+	$(this).text(newName);
+
 }
 
 function anagrammedName(name) {
